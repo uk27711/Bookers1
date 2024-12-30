@@ -1,19 +1,15 @@
 Rails.application.routes.draw do
-  get 'homes/top'
-  get 'lists/new'
-  get 'lists/index'
-  get 'lists/show'
-  get 'lists/edit'
+  get '/top', to: 'homes#top'
+  get '/books', to: 'books#new'
+  get 'books/index'
+  get 'books/:id' => 'books#show'
+  get 'books/:id/edit' => 'books#edit', as: 'edit_book'
+  get 'home/top' => 'homes#top'
   
   resources :books
-  get 'bppks/new'
   post 'books' => 'books#create'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
-  get 'lists/:id' => 'lists#show'
-  get '/books', to: 'books#index'
-  get "/" => "homes#top"
 
   
 end
