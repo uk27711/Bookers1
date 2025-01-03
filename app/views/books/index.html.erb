@@ -25,6 +25,28 @@
 
 <h2>New book</h2>
 
+<%= form_with(model: @book) do |form| %>
+  <div id="error_explanation">
+  <% if @book.errors.any? %>
+    <h2><%= pluralize(@book.errors.count, "error") %> prohibited this @book from being saved:</h2>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+
+  <% if flash[:notice] %>
+  <div class="flash"><%= flash[:notice] %></div>
+<% end %>
+<% end %>
+
+
+
+
+
+
 
 <%= form_for @book do |form| %>
 <div class="field">
