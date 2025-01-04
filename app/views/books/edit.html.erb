@@ -12,7 +12,8 @@
 
   <div class="actions">
     <%= f.submit "Update Book", class: "btn btn-primary" %>
-    <%= link_to 'Show', book_path(@book) %>
-    <%= link_to 'Back', book_path, class: "btn btn-secondary" %>
+    <a class="edit" href="<%= edit_book_path(@book) %>">Edit</a>
+      | 
+    <a class="back" href="/books">Back</a>
   </div>
 <% end %>

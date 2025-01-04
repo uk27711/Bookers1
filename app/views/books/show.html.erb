@@ -1,14 +1,12 @@
 <body>
-  <p id="notice"></p>
-  <p>
-    <strong>Title:</strong>
-  </p>
+<p id="notice"></p>
 
-  <p>
-    <strong>Body:</strong>
-  </p>
+    <p><strong>Title:</strong><%= @book.title %></p>
 
-  <a class="edit" href="/books/edit">Edit</a>
+    <p><strong>Body:</strong><%= @book.body %></p>
+
+
+  <a class="edit" href="<%= edit_book_path(@book) %>">Edit</a>
    | 
   <a class="back" href="/books">Back</a>
 </body>

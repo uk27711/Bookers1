@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get '/top', to: 'homes#top'
   get '/books', to: 'books#index'
-  get '/books/new', to: 'books#new',as: :new_book
   get 'books/:id/show' => 'books#show', as: 'show_book'
   get 'books/:id/edit' => 'books#edit', as: 'edit_book'
   get 'home/top' => 'homes#top'
