@@ -12,8 +12,21 @@
 
   <div class="actions">
     <%= f.submit "Update Book", class: "btn btn-primary" %>
-    <a class="edit" href="<%= edit_book_path(@book) %>">Edit</a>
+
+    <a class="show" href="<%= show_book_path(@book) %>">Show</a>
       | 
     <a class="back" href="/books">Back</a>
   </div>
+
+<% if @book.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@book.errors.count, "error") %> prohibited this @book from being saved:</h2>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+  
 <% end %>

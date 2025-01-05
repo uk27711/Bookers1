@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+    <div class="flash"><%= flash[:notice] %></div>
+<% end %>
+
 <h1>Books</h1>
 <table>
   <thead>
@@ -35,9 +39,9 @@
   </div>
 <% end %>
 
-  <% if flash[:notice] %>
+<% if flash[:notice] %>
     <div class="flash"><%= flash[:notice] %></div>
-  <% end %>
+<% end %>
 
       <%= form.label :title %>
       <%= form.text_field :title %>
